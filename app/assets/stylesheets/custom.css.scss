@@ -36,3 +36,37 @@ $navbar-default-bg: #94CDE1;
 .center {
     text-align: center;
   }
+
+.jumbotron {
+      background-image: asset-url('arizona.jpg');
+      background-size: cover;
+      height: 510px;
+  }
+
+.jumbotron h1 p {
+    color: grey;
+}
+
+footer {
+    margin-top: 45px;
+    padding-top: 5px;
+    border-top: 1px solid #8FABF0 ;
+    color: #8FABF0;
+
+
+    text-decoration: none;
+}
+
+footer small {
+    float: left;
+}
+
+footer ul {
+    float: right;
+    list-style: none;
+}
+
+footer ul li {
+    float: left;
+    margin-left: 15px;
+}
