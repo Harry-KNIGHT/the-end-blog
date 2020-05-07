@@ -1,5 +1,38 @@
+$navbar-default-bg: #94CDE1;
+
+@import "bootstrap-sprockets";
 @import "bootstrap";
 
-.navbar{
-    background-color: #F7A0CC !important;
+#logo {
+    float: left;
+    font-size: 1.7em;
+    color : white;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    font-weight: bold;
 }
+
+#about {
+    color: purple;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+#article{
+    color: purple;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+
+
+#newarticle{
+    color: purple;
+    font-weight: bold;
+    font-size: 1em;
+    
+}
+
+.center {
+    text-align: center;
+  }
