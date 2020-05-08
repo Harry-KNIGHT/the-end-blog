@@ -14,13 +14,14 @@ $navbar-default-bg: #94CDE1;
 }
 
 #about {
-    color: purple;
+    color: #ff5500;
     font-weight: bold;
     font-size: 1em;
+    font-style: italic;
 }
 
 #article{
-    color: purple;
+    color: #ff5500;
     font-weight: bold;
     font-size: 1em;
 }
@@ -28,7 +29,7 @@ $navbar-default-bg: #94CDE1;
 
 
 #newarticle{
-    color: purple;
+    color: #ff5500;
     font-weight: bold;
     font-size: 1em;
     
@@ -46,6 +47,12 @@ $navbar-default-bg: #94CDE1;
 
 .jumbotron h1 p {
     color: grey;
+}
+
+.articles-actions {
+    border-top: 1px solid #8FABF0;
+    margin-top: 15px;
+    padding-top: 15px;
 }
 
 footer {
