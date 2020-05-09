@@ -1,10 +1,18 @@
 <div class="row">
   <div class="col-xs-8 col-xs-offset-2">
-    <h1> Tous les articles.</h1>
-  <%= link_to 'Créer un article', new_article_path %>
- 
-  <%= render 'articles/articles', obj: @articles %>
-  </div>
+      <h1> Tous les articles.</h1>
+        <p>
+        <%= link_to 'Créer un article', new_article_path %>
+        </p>
+      <div align="center">
+       <%= will_paginate @articles %>
+      </div>   
+      <%= render 'articles/articles', obj: @articles %>
+      <div align="center">
+        <%= will_paginate @articles %>
+      </div>
+
+    </div>
 </div>
 
 
