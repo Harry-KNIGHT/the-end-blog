@@ -8,7 +8,7 @@
         <% if @article.user %>
         <div class="articles-actions">
             <%= gravatar_for @article.user, size: 20%> <br/>
-            <small>Article crée par <%= link_to @article.user.username, user_path(@article_user) %></small>
+            <small>Article crée par <strong><em><%= @article.user.username %></em></strong></small>
         </div> 
         <% end %>
                 <div class="articles-actions">
