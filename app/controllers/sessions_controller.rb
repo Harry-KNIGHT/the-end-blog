@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
         user = User.find_by(email: params[:session][:email].downcase)
         if user && user.authenticate(params[:session][:password])
             flash[:success] = "Connecté amigo"
-            session[:user_id] = user
+            session[:user_id] = user.id
             redirect_to user_path(user)
         else
             flash.now[:danger] = "Identifiants incorrect mon pote"
