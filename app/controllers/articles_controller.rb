@@ -15,6 +15,7 @@ class ArticlesController < ApplicationController
     end
 
     def create
+        @article = Article.new(article_params)
         @article.user = current_user
         if @article.save
             flash[:notice] = "Article créé"
@@ -54,7 +55,7 @@ class ArticlesController < ApplicationController
     end
 
     def require_same_user
-        if current_user != @article #@article.user ne fonctionnait pas sur le browser, voir si fonctionne en prod
+        if current_user != @article.user #@article.user ne fonctionnait pas sur le browser, voir si fonctionne en prod
             flash[:danger] = "Eho pelo c'est pas ton article"
             redirect_to root_path
         end
