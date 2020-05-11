@@ -14,10 +14,10 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><%= link_to "À propos", about_path, id:"about" %></li>
-              <li><%= link_to "Articles", articles_path, id:"article"%></li>
-          <% if logged_in? %>
-              <li><%= link_to "Nouvel Article", new_article_path, id:"newarticle"%></li>
-              <li><%= link_to "Utilisateurs", users_path, id:"user"%></li>
+        <li><%= link_to "Articles", articles_path, id:"article"%></li>
+           <% if logged_in? %>
+             <li><%= link_to "Nouvel Article", new_article_path, id:"newarticle"%></li>
+             <li><%= link_to "Utilisateurs", users_path, id:"user"%></li>
           <% end %>
       </ul>
 
