@@ -13,9 +13,11 @@
               <td><%= link_to article.title, article_path(article) %></td>
               <td><%= truncate(article.description, length: 40) %></td>
               <td><small>Created by<strong> <%= article.user.username if article.user %>, </strong>at <%= time_ago_in_words(article.created_at)%> ago,
-                        updated <%= time_ago_in_words(article.updated_at)%> ago </small> </th>  
-              <td><%= link_to 'Edit', edit_article_path(article), class:"btn btn-xs btn-primary" %></td>
-              <td><%= link_to 'Delet', article_path(article), method: :delete, class:"btn btn-xs btn-danger" %></td>
+                         updated <%= time_ago_in_words(article.updated_at)%> ago </small> </th> 
+              <% if logged_in? and current_user == article.user %>          
+                <td><%= link_to 'Edit', edit_article_path(article), class:"btn btn-xs btn-primary" %></td>
+                <td><%= link_to 'Delet', article_path(article), method: :delete, class:"btn btn-xs btn-danger" %></td>
+              <% end %>
           </tr>
     </tbody>
     <% end %>

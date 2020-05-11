@@ -1,4 +1,7 @@
 class ArticlesController < ApplicationController
+    before_action :require_user, except: [:index, :show]
+    before_action :require_same_user, only: [:edit, :update, :destroy]
+
     def index
         @articles = Article.paginate(page: params[:page], per_page: 5)
     end 
@@ -7,12 +10,13 @@ class ArticlesController < ApplicationController
         @article = Article.new
     end
     def edit
+
         @article = Article.find(params[:id])
     end
 
     def create
         @article = Article.new(article_params)
-        @article.user = User.first
+        @article.user = current_user
         if @article.save
             flash[:notice] = "Article créé"
             redirect_to article_path(@article)
@@ -45,5 +49,14 @@ class ArticlesController < ApplicationController
 
     def article_params
         params.require(:article).permit(:title, :description)
+    end
+
+    private
+
+    def require_same_user
+        if current_user != @article #@article.user ne fonctionnait pas sur le browser, voir si fonctionne en prod
+            flash[:danger] = "Eho pelo c'est pas ton article"
+            redirect_to root_path
+        end
     end
 end 
