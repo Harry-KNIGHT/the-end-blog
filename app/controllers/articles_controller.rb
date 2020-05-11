@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
     def new
         @article = Article.new
     end
-    
+
     def edit
     end
 
@@ -41,13 +41,13 @@ class ArticlesController < ApplicationController
         flash[:danger] = "Article supprimé"
         redirect_to articles_path
     end
+
+        
     private
 
     def article_params
         params.require(:article).permit(:title, :description)
     end
-
-    private
 
     def set_article
         @article = Article.find(params[:id])
