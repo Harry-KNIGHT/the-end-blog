@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
         @article = Article.new(article_params)
         @article.user = current_user
         if @article.save
-            flash[:notice] = "Article créé"
+            flash[:notice] = "Article créé."
             redirect_to article_path(@article)
         else
             render 'new'
@@ -28,7 +28,7 @@ class ArticlesController < ApplicationController
 
     def update
         if @article.update(article_params)
-            flash[:success] = "Article modifié"
+            flash[:success] = "Article modifié."
             redirect_to article_path(@article)
         else
             render 'edit'
@@ -40,7 +40,7 @@ class ArticlesController < ApplicationController
 
     def destroy
         @article.destroy
-        flash[:danger] = "Article supprimé"
+        flash[:success] = "Article supprimé."
         redirect_to articles_path
     end
 
@@ -56,7 +56,7 @@ class ArticlesController < ApplicationController
     end
 
     def require_same_user
-        if current_user != @article.user #@article.user ne fonctionnait pas sur le browser, voir si fonctionne en prod
+        if current_user != @article.user and current_user.admin? == false #@article.user ne fonctionnait pas sur le browser, voir si fonctionne en prod
             flash[:danger] = "Eho pelo c'est pas ton article"
             redirect_to root_path
         end

@@ -13,10 +13,15 @@
                 <h3 class="panel-title">
                   <%= gravatar_for user, size:20 %>
                   <%= link_to user.username, user_path(user) %>
+                  <% if logged_in? and current_user.admin? %>
+                  <%= link_to "Supprimer l'utilisateur", user_path(user), method: :delete, 
+                    data: {confirm: "Veux tu vraiment supprimer cet utilisateur et ses raticles ?"}, class:"btn btn-xs btn-danger"%>
+                    <% end %>
                   </h3>
               </div>
               <div class="panel-body">
                   <%= pluralize(user.articles.count, "") if user.articles %>
+
               </div>
             </div>
               <% end %>
