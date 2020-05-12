@@ -1,34 +1,34 @@
-<h1 align="center">Liste des utilisateurs <h1>
+<h1 align="center">Liste des utilisateurs</h1>
 
- 
 <div class="row">
     <div class="col-xs-8 col-xs-offset-2">
-       <div align="center">
-          <%= will_paginate @users %>
-      </div> 
-      <ul class="list-group">
-       <%= @users.each do |user| %>
-            <div class="panel panel-default">
-               <div class="panel-heading">
-                  <h3 class="panel-title">
-                    <%= gravatar_for user, size:20 %>
-                    <%= link_to user.username, user_path(user) %>
-                    <% if logged_in? and current_user.admin? %>
-                    <%= link_to "Supprimer l'utilisateur", user_path(user), method: :delete, 
-                      data: {confirm: "Veux tu vraiment supprimer cet utilisateur et ses raticles ?"}, class:"btn btn-xs btn-danger"
-                      %>
-                      <% end %>
-                   </h3>
+        <div align="center">
+            <%= will_paginate @users %>
+        </div>
+        <ul class="list-group">
+            <% @users.each do |user| %>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <%= gravatar_for user, size:25 %>
+                        <%= link_to user.username, user_path(user) %>
+                        <% if logged_in? and current_user.admin? %>
+                            <%= link_to "Supprimer l'utilisateur", user_path(user),
+                                method: :delete,
+                                data: {confirm: "Etes vous sur de vouloir supprimer cet utilisateur et tous ses articles ?"},
+                                class: "btn btn-xs btn-danger"
+                            %>
+                        <% end %>
+                    </h3>
                   </div>
-                <div class="panel-body">
+                  <div class="panel-body">
                     <%= pluralize(user.articles.count, "article") if user.articles %>
+                  </div>
                 </div>
-            </div>
-         <% end %>
-      </ul>
-  </div>
-      <div align="center">
-      <%= will_paginate @users %>
-    </div>   
-  
+            <% end %>
+        </ul>
+        <div align="center">
+            <%= will_paginate @users %>
+        </div>
+    </div>
 </div>
