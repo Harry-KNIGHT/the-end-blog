@@ -26,9 +26,11 @@ $navbar-default-bg: #4278f5;
   }
 
 .jumbotron {
-      background-image: asset-url('arizona.jpg');
+      padding-top: 100px;
+      color: yellow;
+      background-image: asset-url('sing_along.jpg');
       background-size: cover;
-      height: 510px;
+      height: 650px;
   }
 
 .jumbotron h1 p {
