@@ -23,15 +23,15 @@
 
     <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %> 
-        <li><%= link_to "Afficher mon profil", user_path(current_user) %></li>
-        <li><%= link_to "Éditer mon profil", edit_user_path(current_user) %></li>
-         <li><%= link_to "Se déconnecter", logout_path, method: :delete %></li>
+        <li><%= link_to "Afficher mon profil", user_path(current_user), id:"show"%></li>
+        <li><%= link_to "Éditer mon profil", edit_user_path(current_user), id:"edit"%></li>
+         <li><%= link_to "Se déconnecter", logout_path, method: :delete, id:"logout" %></li>
              
 
 
             <% else print %>
-             <li><%= link_to "Se connecter", login_path %></li>
-             <li><%= link_to "S'inscrire", signup_path %></li>  
+             <li><%= link_to "Se connecter", login_path, id:"connect" %></li>
+             <li><%= link_to "S'inscrire", signup_path, id:"sign" %></li>  
         <% end %>
           </ul>
         </div><!-- /.navbar-collapse -->
