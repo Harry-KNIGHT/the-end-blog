@@ -1,2 +1,2 @@
 # README
-Prototype avec l'aide du Rails Heroes Course dans le but d'avoir une vision plus globale de la conception d'un site internet. Il a été très bien pour ma part et j'ai appris beaucoup de choses que je remettrais en pratique moi même très vite.
+Prototype d'un site web réalisé avec Ruby on Rails, Bootstrap pour avancer plus vite dans l'UI. 
